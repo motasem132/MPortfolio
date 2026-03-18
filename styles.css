@@ -176,7 +176,7 @@ nav a:hover {
    ======================================== */
 .skills {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 25px;
   opacity: 0;
   transform: translateY(20px);
@@ -192,24 +192,38 @@ nav a:hover {
   text-align: center;
   border-radius: 10px;
   backdrop-filter: blur(6px);
-  transition: transform 1s ease-out, background 0.5s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease-out, background 0.3s ease-out;
   cursor: pointer;
   opacity: 0;
   transform: translateY(20px);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ccc;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .skill.animate {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.skill.animate:hover {
-  transform: translateY(-10px) !important;
+.skill:hover {
+  transform: translateY(-10px);
   background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
-.skill:hover {
+.skill.animate:hover {
   transform: translateY(-10px) !important;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.15) !important;
 }
 
 /* ========================================
@@ -622,6 +636,16 @@ footer .copyright {
 
   .container {
     padding: 130px 5% 50px 5%;
+  }
+
+  .skills {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+  }
+
+  .skill {
+    padding: 15px;
+    font-size: 13px;
   }
 
   .contact-item {

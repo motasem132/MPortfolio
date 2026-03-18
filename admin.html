@@ -737,16 +737,22 @@
 
   <script>
     /* ============================================================
-       FIREBASE CONFIG — REPLACE THIS WITH YOUR OWN CONFIG OBJECT
-       Steps:
-         1. Go to https://console.firebase.google.com/
-         2. Open your project → Project Settings → Your apps
-         3. Copy the firebaseConfig object and paste it below
+       🔒 FIREBASE CONFIG — REPLACE THIS WITH YOUR OWN CONFIG
+       ============================================================
+       Steps to get your Firebase Config:
+       1. Open Firebase Console: https://console.firebase.google.com/
+       2. Select your project → Project Settings (⚙️)
+       3. Scroll down to "Your apps" → Web App
+       4. Copy the entire firebaseConfig object
+       5. Replace the config object below with your own
+       6. Verify databaseURL matches your project ID in:
+          Firebase Console → Realtime Database → Data tab
+          (Look for URL like: https://YOUR_PROJECT-rtdb.firebaseio.com)
        ============================================================ */
     const firebaseConfig = {
       apiKey: "AIzaSyCzV_3AXHLtaMjfJEA4FH7vfxoxstk1wQ4",
       authDomain: "mportfolio-admin.firebaseapp.com",
-      databaseURL: "https://mportfolio-admin-default-rtdb.firebaseio.com", // ← verify in Firebase Console → Realtime Database → Data tab
+      databaseURL: "https://mportfolio-admin-default-rtdb.firebaseio.com", // ✅ Required for Realtime Database
       projectId: "mportfolio-admin",
       storageBucket: "mportfolio-admin.firebasestorage.app",
       messagingSenderId: "105882157212",

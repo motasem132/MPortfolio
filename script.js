@@ -178,16 +178,16 @@ document.querySelectorAll('.project-item, .contact-item').forEach(element => {
    Realtime Database. Find it in:
    Firebase Console → Realtime Database → Data tab
    It looks like:
-   https://mportfolio-admin-default-rtdb.firebaseio.com
+   https://YOUR_PROJECT-rtdb.firebaseio.com
    ======================================== */
 const firebaseConfig = {
-  apiKey:            "AIzaSyCzV_3AXHLtaMjfJEA4FH7vfxoxstk1wQ4",
-  authDomain:        "mportfolio-admin.firebaseapp.com",
-  databaseURL:       "https://mportfolio-admin-default-rtdb.firebaseio.com", // ← paste your actual URL here
-  projectId:         "mportfolio-admin",
-  storageBucket:     "mportfolio-admin.firebasestorage.app",
+  apiKey: "AIzaSyCzV_3AXHLtaMjfJEA4FH7vfxoxstk1wQ4",
+  authDomain: "mportfolio-admin.firebaseapp.com",
+  databaseURL: "https://mportfolio-admin-default-rtdb.firebaseio.com", // ← paste your actual URL here
+  projectId: "mportfolio-admin",
+  storageBucket: "mportfolio-admin.firebasestorage.app",
   messagingSenderId: "105882157212",
-  appId:             "1:105882157212:web:8c857a5e42f93d8371ad59"
+  appId: "1:105882157212:web:8c857a5e42f93d8371ad59"
 };
 
 // Initialise Firebase (guard against duplicate init)
@@ -306,12 +306,13 @@ function escapeHtml(str) {
 
 /* ========================================
    buildSkillCard — creates a .skill element
+   Simple grid of square cards with skill name
    ======================================== */
 function buildSkillCard(skill, index) {
   const div = document.createElement('div');
   div.className = 'skill';
   div.style.animationDelay = (index * 0.05) + 's';
-  div.textContent = skill.name;
+  div.textContent = escapeHtml(skill.name); // XSS protection
   return div;
 }
 
